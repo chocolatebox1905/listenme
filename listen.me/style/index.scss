@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$white: #fefefe;
+$grey: #B9B9B9;
+$bgColor: #161616;
+$black: #0C0C0C;
+$mediumFont: 'CircularMedium', 'sans-serif';
+$regularFont: 'CircularRegular', 'sans-serif';
+$boldFont: 'CircularBold', 'sans-serif';
+
+h1,h2,h3,h4,h5,h6,a {
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CircularRegular;
+    src: url('../fonts/regular.ttf');
+}
+
+@font-face {
+    font-family: CircularBold;
+    src: url('../fonts/bold.ttf');
+}
+
+@font-face {
+    font-family: CircularMedium;
+    src: url('../fonts/medium.ttf');
+}
+
+body {
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+    body {
+        background-color: $bgColor;
+    }
+
+    #d-wrapper {
+        display: none;
+    }
+
+    #content-wrapper {
+        width: 100%;
+        height: auto;
+
+        .nav-container {
+            height: 65px;
+            background-color: transparent;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            right: 0;
+            transition: 0.5s;
+
+            nav {
+                display: flex;
+                width: 90%;
+                justify-content: space-between;
+                align-items: center;
+
+                .nav-btn {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+
+                    .btn-img {
+                        height: 25px;
+                    }
+
+                    .dots {
+                        height: 22px;
+                    }
+                }
+
+                h3 {
+                    font-family: $mediumFont;
+                    font-size: 14px;
+                    color: $white;
+                }
+            }
+        }
+
+        #playlist-info-container {
+            height: 300px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+            position: relative;
+
+            #img-container {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+
+                #banner {
+                    height: 100%;
+                    position: absolute;
+                    z-index: 1;
+                }
+
+                #gradient {
+                    height: 100%;
+                    width: 100%;
+                    background: rgb(22,22,22);
+                    background: linear-gradient(0deg, rgba(22,22,22,1) 0%, rgba(22,22,22,0.1) 100%);
+                    z-index: 2;
+                    position: absolute;
+                }
+            }
+
+            #info {
+                width: 90%;
+                position: absolute;
+                z-index: 2;
+                margin-bottom: 5%;
+                display: flex;
+                flex-direction: column;
+                grid-row-gap: 15px;
+
+                #p-top-info {
+                    display: grid;
+                    grid-template-columns: repeat(3, max-content);
+                    grid-column-gap: 20px;
+                    align-items: center;
+
+                    #circle {
+                        height: 2px;
+                        width: 2px;
+                        background-color: $grey;
+                        border-radius: 50px;
+                    }
+
+                }
+
+                h2 {
+                    font-family: $boldFont;
+                    font-size: 22px;
+                    color: $white;
+                    line-height: 1.5;
+                }
+
+                #p-bottom-info {
+                    display: grid;
+                    grid-template-columns: repeat(3, max-content);
+                    grid-column-gap: 30px;
+                    margin-top: 10px;
+                    align-items: center;
+
+                    #play-btn {
+                        border: 1px solid $white;
+                        border-radius: 50px;
+                        font-family: $mediumFont;
+                        background-color: transparent;
+                        font-size: 11px;
+                        color: $white;
+                        height: 35px;
+                        letter-spacing: 3.5px;
+                        padding: 0px 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        grid-column-gap: 10px;
+
+                        #btn-grid {
+                            display: grid;
+                            align-items: center;
+                            grid-template-columns: max-content max-content;
+                            grid-column-gap: 10px;
+
+                            #play-img {
+                                height: 10px;
+                            }
+                        }
+                    }
+
+                    #shuffle-btn {
+                        background-color: transparent;
+                        border: none;
+                        background-image: url('../img/shuffle.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                        background-position: center center;
+                        background-size: 100% 12px;
+                    }
+                }
+
+                h4 {
+                    font-family: $regularFont;
+                    color: $grey;
+                    font-size: 11px;
+                    letter-spacing: 3.5px;
+                }
+            }
+        }
+
+        #list-container {
+            display: grid;
+            grid-template-rows: repeat(auto, max-content);
+            margin-bottom: 70px;
+
+            .track-container {
+                width: 100%;
+                background-color: $bgColor;
+                height: 70px;
+                position: relative;
+
+                .track-info-container {
+                    position: absolute;
+                    z-index: 1;
+                    display: flex;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100%;
+
+                    .t-info {
+                        width: 90%;
+                        height: 100%;
+                        display: grid;
+                        grid-template-columns: 30px auto 30px;
+                        align-items: center;
+
+                        h4 {
+                            font-family: $regularFont;
+                            color: $grey;
+                            font-size: 11px;
+                            letter-spacing: 3.5px;
+                        }
+
+                        .track {
+                            display: grid;
+                            grid-template-columns: max-content auto max-content;
+                            grid-column-gap: 15px;
+                            align-items: center;
+
+                            .img-container {
+                                height: 55px;
+                                width: 55px;
+                                border-radius: 5px;
+                                background-color: $grey;
+                                overflow: hidden;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                .img {
+                                    height: 100%;
+                                }
+                            }
+
+                            .t-grid {
+                                display: grid;
+                                grid-template-rows: max-content max-content;
+                                grid-row-gap: 3px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+
+                                h4.artist {
+                                    font-family: $regularFont;
+                                    color: $grey;
+                                    font-size: 12px;
+                                    letter-spacing: 0px;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+
+                                h3.song {
+                                    font-family: $mediumFont;
+                                    color: $white;
+                                    font-size: 14px;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                            }
+
+                            h4.duration {
+                                font-family: $regularFont;
+                                color: $grey;
+                                font-size: 12px;
+                                letter-spacing: 0px;
+                            }
+
+                            h4.playing {
+                                color: $white;
+                            }
+                        }
+
+                        .more-container {
+                            display: flex;
+                            justify-content: flex-end;
+
+                            .more-btn {
+                                outline: none;
+                                border: none;
+                                background-color: transparent;
+                                
+                                .more-img {
+                                    height: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .track-border {
+                    position: absolute;
+                    z-index: 2;
+                    height: 100%;
+                    width: 3px;
+                    background-color: transparent;
+                    border-radius: 0px 10px 10px 0px;
+                }
+
+                .b-active {
+                    background-color: #C4C5B3;
+                }
+            }
+
+            .active {
+                background: rgb(36,36,36);
+                background: linear-gradient(90deg, rgba(36,36,36,1) 0%, rgba(22,22,22,1) 100%);
+            }
+        }
+
+        #now-playing-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: max-content;
+            background-color: $black;
+            z-index: 100;
+            width: 100%;
+
+            #timeline-container {
+                width: 100%;
+                height: 3px;
+                background-color: #242424;
+
+                #current {
+                    height: 100%;
+                    width: 22%;
+                    background-color: #C4C5B3;
+                }
+            }
+
+
+            #playing-container {
+                width: 100%;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+
+                #track {
+                    width: 90%;
+                    height: 100%;
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: max-content auto max-content;
+                    grid-column-gap: 15px;
+
+                    .img-container {
+                        height: 55px;
+                        width: 55px;
+                        border-radius: 5px;
+                        background-color: $grey;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .img {
+                            height: 100%;
+                        }
+                    }
+
+                    .t-grid {
+                        display: grid;
+                        grid-template-rows: max-content max-content;
+                        grid-row-gap: 3px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                        h4.artist {
+                            font-family: $regularFont;
+                            color: $grey;
+                            font-size: 12px;
+                            letter-spacing: 0px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        h3.song {
+                            font-family: $mediumFont;
+                            color: $white;
+                            font-size: 14px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                    #play-now {
+                        outline: none;
+                        border: none;
+                        background-color: transparent;
+
+                        .p-img {
+                            height: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+}
+
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+
+    #d-wrapper {
+        display: none;
+    }
+
+
+}
+
+
+
+
+
+@media only screen and (min-width: 1100px) {
+
+    #d-wrapper {
+        height: 100%;
+        width: 100%;
+        background-color: red;
+    }
+
+    #content-wrapper {
+        display: none;
+    }
+}

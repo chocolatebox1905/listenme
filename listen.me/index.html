@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Listen.me - Listen together, but apart</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Listen.me - Listen together, but apart">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <link rel="icon" href="img/icon.png" type="image/png"/>
+    <link rel="shortcut icon" href="img/icon.ico"/>
+</head>
+
+<body>
+
+    <div id="d-wrapper"></div>
+
+    <div id="content-wrapper">
+        <div class="nav-container">
+            <nav>
+                <button id="back-btn" class="nav-btn">
+                    <img src="img/nav-back.png" class="btn-img">
+                </button>
+                <h3>Discover</h3>
+                <button id="back-btn" class="nav-btn">
+                    <img src="img/nav-dots.png" class="dots">
+                </button>
+            </nav>
+        </div>
+
+
+        <div id="playlist-info-container">
+            <div id="img-container">
+                <img src="img/2.jpg" id="banner">
+                <div id="gradient"></div>
+            </div>
+
+            <div id="info">
+                <div id="p-top-info">
+                    <h4>PLAYLIST</h4>
+                    <div id="circle"></div>
+                    <h4>10 TRACKS</h4>
+                </div>
+                <h2>a playlist to listen to while strolling around in tokyo at 5am</h2>
+                <div id="p-bottom-info">
+                    <button id="play-btn">
+                        <span id="btn-grid">
+                            <img src="img/play.png" id="play-img">
+                            PLAY
+                        </span>
+                    </button>
+                    <button id="shuffle-btn"></button>
+                    <h4>546 LISTENING NOW</h4>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div id="list-container">
+            <div class="track-container active">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>01</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/1.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">lo-key design ft. kojikoji</h4>
+                                <h3 class="song">careless</h3>
+                            </div>
+                            <h4 class="duration playing">0:40</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border b-active"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>02</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/3.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">Kirinji ft. YonYon</h4>
+                                <h3 class="song">Killer tune kills me</h3>
+                            </div>
+                            <h4 class="duration">3:22</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>03</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/4.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">Sato Moka</h4>
+                                <h3 class="song">Melt bitter</h3>
+                            </div>
+                            <h4 class="duration">3:22</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>04</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/5.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">Haruno</h4>
+                                <h3 class="song">Kidding me</h3>
+                            </div>
+                            <h4 class="duration">3:22</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>05</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/6.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">Mariya Takeuchi</h4>
+                                <h3 class="song">PLastic love</h3>
+                            </div>
+                            <h4 class="duration">7:56</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>06</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/7.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">THREE1989</h4>
+                                <h3 class="song">Don't miss it</h3>
+                            </div>
+                            <h4 class="duration">3:23</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>07</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/8.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">Yuki Saito</h4>
+                                <h3 class="song">Straw hats summer feeling</h3>
+                            </div>
+                            <h4 class="duration">4:15</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>08</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/9.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">Poly</h4>
+                                <h3 class="song">Peony</h3>
+                            </div>
+                            <h4 class="duration">4:32</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>09</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/10.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">Maiko Nakamura</h4>
+                                <h3 class="song">Yurarirarira</h3>
+                            </div>
+                            <h4 class="duration">3:22</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+
+            <div class="track-container">
+                <div class="track-info-container">
+                    <div class="t-info">
+                        <h4>10</h4>
+                        <div class="track">
+                            <div class="img-container">
+                                <img src="img/11.jpg" class="img">
+                            </div>
+                            <div class="t-grid">
+                                <h4 class="artist">Candygirl</h4>
+                                <h3 class="song">Yous</h3>
+                            </div>
+                            <h4 class="duration">3:22</h4>
+                        </div>
+                        <div class="more-container">
+                            <button class="more-btn">
+                                <img src="img/t-dot.png" class="more-img">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-border"></div>
+            </div>
+        </div>
+
+        <div id="now-playing-container">
+            <div id="timeline-container">
+                <div id="current"></div>
+            </div>
+            <div id="playing-container">
+                <div id="track">
+                    <div class="img-container">
+                        <img src="img/1.jpg" class="img">
+                    </div>
+                    <div class="t-grid">
+                        <h4 class="artist">lo-key design ft. kojikoji</h4>
+                        <h3 class="song">careless</h3>
+                    </div>
+                    <button id="play-now">
+                        <img src="img/b-play.png" class="p-img">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
